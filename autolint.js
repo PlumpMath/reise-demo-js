@@ -5,6 +5,7 @@ module.exports = {
   ],
   "linterOptions": {
     indent: 2,
+    "browser": true,
     "vars": true,
     "nomen": true,
     "sloppy": true,
@@ -16,6 +17,8 @@ module.exports = {
       "buster",
       "cull",
       "dome",
+      "console",
+      "jQuery",
       "document"
     ]
   },

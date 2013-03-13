@@ -22,9 +22,10 @@
     togglee: toDate
   });
 
-  R.setupChildAges({
-    numChildrenSelect: d.id("numChildrenSelect"),
-    root: d.id("childAgeSelects")
+  R.setupMultiFormSelect({
+    select: d.id("numChildrenSelect"),
+    root: d.id("childAgeSelects"),
+    template: d.id("childAgeSelectTemplate").innerHTML
   });
 
 }(FINN.reise, FINN.dom));
