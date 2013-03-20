@@ -19,7 +19,7 @@
       });
 
       assert.equals(this.root.childNodes.length, 1);
-      assert.tagName(this.root.firstChild, "select");
+      assert.tagName(this.root.firstChild.firstChild, "select");
     },
 
     "should show two elements when choosing 2": function () {

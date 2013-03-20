@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="travel.css">
+
+    <style>
+      .hidden {display: none !important;}
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/r/flybilletter/progress" method="get" class="clearfix">
+      <input type="hidden" name="userAction" value="search">
+      <input type="hidden" name="newSearch" value="true">
+      <input type="hidden" name="searchType" value="FLIGHT">
+      <input type="hidden" name="asynchronous" value="true">
+      <input type="hidden" name="incremental" value="true">
+      <input type="hidden" name="externalSearch" value="false">
+
+      <h1> Billige flybilletter </h1>
+      <ul>
+        <li id="oneway-or-roundtrip">
+          <label class="legend">Reise</label><div>
+            <span><label><input id="turnOnRoundtrip" type="radio" name="oneWayOnly" value="false" class="roundTrip" checked="checked"> Tur/retur</label></span>
+            <span><label><input id="turnOffRoundtrip" type="radio" name="oneWayOnly" value="true" class="oneWay"> Enveisbillett</label></span>
+          </div>
+        </li>
+        <li id="from-field">
+          <label class="legend">Fra</label>
+
+          <input type="hidden" class="locOriginCodes" name="locOriginCodes" value="">
+          <input type="hidden" class="locOriginNameHidden" name="locOriginNameHidden" value="">
+          <input type="text" class="locOriginName form-autocomplete ac_input" name="locOriginName" value="" autocomplete="off">
+        </li>
+        <li id="to-field">
+          <label class="legend">Til</label>
+
+          <input type="hidden" class="locDestinationCodes" name="locDestinationCodes" value="">
+          <input type="hidden" class="locDestinationNameHidden" name="locDestinationNameHidden" value="">
+          <input type="text" class="locDestinationName form-autocomplete ac_input" name="locDestinationName" value="" autocomplete="off">
+        </li>
+        <li id="departure-date">
+          <label class="legend">Utreise</label>
+
+          <input type="text" class="depDate datepicker_field from_date hasDatepicker" name="depDate" value="22.03.2013" maxlength="10" id="dp1363764499641"><img class="ui-datepicker-trigger" src="http://cache.finn.no/r/img/calendar/travel_calendarb_light.png" alt="Kalender" title="Kalender">
+          <span class="departure-weekday">Fredag</span>
+        </li>
+        <li id="return-date" style="visibility: visible;">
+          <label class="legend">Hjemreise</label>
+
+          <input type="text" class="retDate datepicker_field to_date hasDatepicker" name="retDate" value="24.03.2013" maxlength="10" id="dp1363764499642"><img class="ui-datepicker-trigger" src="http://cache.finn.no/r/img/calendar/travel_calendarb_light.png" alt="Kalender" title="Kalender">
+          <span class="return-weekday">Søndag</span>
+        </li>
+        <li id="travellers">
+          <div id="adults">
+            <label class="legend">Voksne</label>
+            <select class="noOfAdults" name="noOfAdults">
+              <option value="1">1 voksen</option>
+
+              <option value="2">2 voksne</option>
+
+              <option value="3">3 voksne</option>
+
+              <option value="4">4 voksne</option>
+
+              <option value="5">5 voksne</option>
+
+              <option value="6">6 voksne</option>
+
+              <option value="7">7 voksne</option>
+
+              <option value="8">8 voksne</option>
+
+              <option value="9">9 voksne</option>
+
+            </select>
+          </div>
+
+
+
+          <div id="children">
+            <label class="legend">Barn (0-17 år)</label>
+            <select id="noOfChildren" class="noOfChildren" name="noOfChildren">
+              <option value="0">0 barn</option>
+
+              <option value="1">1 barn</option>
+
+              <option value="2">2 barn</option>
+
+              <option value="3">3 barn</option>
+
+              <option value="4">4 barn</option>
+
+              <option value="5">5 barn</option>
+
+              <option value="6">6 barn</option>
+
+              <option value="7">7 barn</option>
+
+              <option value="8">8 barn</option>
+
+              <option value="9">9 barn</option>
+
+            </select>
+          </div>
+          <div id="childrens-ages"></div>
+
+        </li>
+        <li id="search-button">
+          <input type="submit" class="button" value="Søk fly">
+        </li>
+      </ul>
+      <p class="neutral" id="disclaimer">Antall plasser i de billigste kategoriene er begrenset.<br>Prisen kan ikke garanteres før bestillingen er bekreftet av leverandøren.</p>
+    </form>
+
+
+    <script type="text/template" id="childAgeSelectTemplate">
+      <select>
+        <option value="">- velg alder -</option>
+        <option>&lt; 2 år </option>
+        <option>3 år </option>
+        <option>4 år </option>
+        <option>5 år </option>
+      </select>
+    </script>
+
+    <script src="external/cull.js"></script>
+    <script src="external/dome.js"></script>
+    <script src="external/jquery.js"></script>
+    <script src="external/creator.js"></script>
+    <script src="lib/multi-form-select.js"></script>
+    <script src="lib/radio-toggler.js"></script>
+    <script src="setup-air-search.js"></script>
+  </body>
+</html>

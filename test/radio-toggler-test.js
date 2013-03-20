@@ -16,6 +16,33 @@
       this.onRadio = d.el.input({ type: "radio", name: "toggler" });
     },
 
+    "should require onRadio": function () {
+      assert.exception(function () {
+        G.setupRadioToggler({
+          offRadio: this.offRadio,
+          togglee: this.togglee
+        });
+      });
+    },
+
+    "should require offRadio": function () {
+      assert.exception(function () {
+        G.setupRadioToggler({
+          onRadio: this.onRadio,
+          togglee: this.togglee
+        });
+      });
+    },
+
+    "should require togglee": function () {
+      assert.exception(function () {
+        G.setupRadioToggler({
+          offRadio: this.offRadio,
+          onRadio: this.onRadio
+        });
+      });
+    },
+
     "should hide when already in off-mode": function () {
       this.offRadio.checked = true;
       setupRadioToggler.call(this);
